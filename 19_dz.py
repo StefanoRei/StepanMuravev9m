@@ -1,11 +1,10 @@
-n = int(input("Введите количество чисел: "))
+n = int(input())
 numbers = []
 
 for _ in range(n):
-    number = int(input("Введите число: "))
+    number = int(input())
     numbers.append(number)
 
-# Находим число с максимальным количеством разрядов в двоичном представлении
 max_binary_digits_number = max(numbers, key=lambda x: len(bin(x))-2)
 
-print("Число с максимальным количеством разрядов в двоичном представлении: ", max_binary_digits_number)
+print(max_binary_digits_number)
