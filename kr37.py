@@ -1,23 +1,13 @@
-def is_valid_37_base_number(s):
-    try:
-        int(s, 37)
-        return True
-    except ValueError:
-        return False
+import string
 
-num1 = input()
-if not is_valid_37_base_number(num1):
-    print("err")
-    exit()
-
-
-num2 = input()
-if not is_valid_37_base_number(num2):
-    print("err")
-    exit()
-
-num1_dec = int(num1, 37)
-num2_dec = int(num2, 37)
-sum_dec = num1_dec + num2_dec
-
-print(sum_dec)
+base = '0123456789abcdefghijklmnopqrstuvwxyz'
+def from_base(number):
+    a = 0
+    res = 0
+    for i in number[::-1]:
+        res += base.index(i) * (37 ** a)
+        a += 1
+    return res
+x = from_baze(input())
+y = from_baze(input())
+print(x+y)
